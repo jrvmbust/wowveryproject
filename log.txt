@@ -1,4 +1,4 @@
-Fri Aug 08 18:29:52 2014
+Fri Aug 08 18:59:45 2014
 Windows-7-6.1.7600
 Ren'Py 6.17.7.521
 Project Sweeegggg 4.0
@@ -119,40 +119,8 @@ Texture testing:
 Performance test:
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.045000 seconds.
-- Frame drawn at 0.051000 seconds.
-- Frame drawn at 0.058000 seconds.
-- Frame drawn at 0.064000 seconds.
-- 0.064000 seconds to render 5 frames.
-Traceback (most recent call last):
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\execution.py", line 294, in run
-    node.execute()
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\ast.py", line 1593, in execute
-    self.call("execute")
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\ast.py", line 1611, in call
-    renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\statements.py", line 144, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 99, in execute_play_music
-    if_changed=p.get("if_changed", False))
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\audio\music.py", line 89, in play
-    c = get_channel(channel)
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\audio\audio.py", line 758, in get_channel
-    raise Exception("Audio channel %r is unknown." % name)
-Exception: Audio channel u'chime' is unknown.
-Traceback (most recent call last):
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\execution.py", line 294, in run
-    node.execute()
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\ast.py", line 1593, in execute
-    self.call("execute")
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\ast.py", line 1611, in call
-    renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\statements.py", line 144, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 203, in execute_stop_music
-    renpy.music.stop(fadeout=eval(p["fadeout"]), channel=channel)
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\audio\music.py", line 227, in stop
-    c = get_channel(channel)
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\audio\audio.py", line 758, in get_channel
-    raise Exception("Audio channel %r is unknown." % name)
-Exception: Audio channel u'chime' is unknown.
+- Frame drawn at 0.020000 seconds.
+- Frame drawn at 0.030000 seconds.
+- Frame drawn at 0.038000 seconds.
+- Frame drawn at 0.065000 seconds.
+- 0.065000 seconds to render 5 frames.
