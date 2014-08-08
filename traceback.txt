@@ -1,0 +1,31 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 157, in script
+    stop chime
+  File "renpy/common/000statements.rpy", line 203, in execute_stop_music
+    renpy.music.stop(fadeout=eval(p["fadeout"]), channel=channel)
+Exception: Audio channel u'chime' is unknown.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 157, in script
+    stop chime
+  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\ast.py", line 1593, in execute
+    self.call("execute")
+  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\ast.py", line 1611, in call
+    renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\statements.py", line 144, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 203, in execute_stop_music
+    renpy.music.stop(fadeout=eval(p["fadeout"]), channel=channel)
+  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\audio\music.py", line 227, in stop
+    c = get_channel(channel)
+  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\audio\audio.py", line 758, in get_channel
+    raise Exception("Audio channel %r is unknown." % name)
+Exception: Audio channel u'chime' is unknown.
+
+Windows-7-6.1.7600
+Ren'Py 6.17.7.521
+Project Sweeegggg 4.0
