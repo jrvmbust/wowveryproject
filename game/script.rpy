@@ -32,7 +32,7 @@ init:
     $ teleport = ImageDissolve("id_teleport.png", 1.0, 0)
     
     $ end = Character(None,
-                          what_size=20, #Font size
+                          what_size=50, #Font size
                           what_xalign=0.5, #Centers text within the window
                           window_xalign=0.5, #Centers the window horizontally
                           window_yalign=0.5, #Centers the window vertically
@@ -58,7 +58,7 @@ image pig pig:
     im.Scale("images/pig.png", 220, 210)
     xalign .5
     yalign .5
-image doge doge = "images/doge.jpeg"
+image doge doge = im.Alpha("images/doge.jpeg", 0.5)
 
 
 
@@ -233,17 +233,22 @@ label easteregg:
     
     scene bg bbg
     show doge doge
+    with dissolve
     play music "wow.mp3"
     
-    end "GROUPMATES:
-              Rovic Vargas{w}
+    end "GROUPMATES:"
+    end "     Rovic Vargas{w}
               Clyde Tapales{w}
               Justin Caracta{w}
               Angelika Bais{w}
               Earl Regalado{w}"
-    stop music
     
-
+    
+    
+    centered "Thanks for Playing!"
+    with dissolve
+    stop music
+    return
     
     
     
