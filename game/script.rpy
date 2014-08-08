@@ -38,19 +38,19 @@ init:
     $ teleport = ImageDissolve("id_teleport.png", 1.0, 0)
 
     
-image bg sc1 = im.Scale("sc1.png", 800, 600)
-image bg sc2 = im.Scale("sc2.png", 800, 600)
-image bg sc3 = im.Scale("sc3.png", 900, 700)
-image bg sc4 = im.Scale("sc4.png", 800, 600)
-image bg sc5 = im.Scale("sc5.png", 800, 600)
-image bg sc6 = im.Scale("sc6.png", 800, 600)
-image bg sc7 = im.Scale("sc7.png", 800, 600)
-image bg sc8 = im.Scale("sc8.png", 800, 600)
-image bg bbg = im.Scale("bbg.png", 800, 600)
-image bg sctrans = im.Scale("sctrans.png", 800, 600)
-image gala norm = im.Scale("gd.png", 400, 600)
+image bg sc1 = im.Scale("image/sc1.png", 800, 600)
+image bg sc2 = im.Scale("image/sc2.png", 800, 600)
+image bg sc3 = im.Scale("image/sc3.png", 900, 700)
+image bg sc4 = im.Scale("image/sc4.png", 800, 600)
+image bg sc5 = im.Scale("image/sc5.png", 800, 600)
+image bg sc6 = im.Scale("image/sc6.png", 800, 600)
+image bg sc7 = im.Scale("image/sc7.png", 800, 600)
+image bg sc8 = im.Scale("image/sc8.png", 800, 600)
+image bg bbg = im.Scale("image/bbg.png", 800, 600)
+image bg sctrans = im.Scale("image/sctrans.png", 800, 600)
+image gala norm = im.Scale("image/gd.png", 400, 600)
 image pig pig:
-    im.Scale("pig.png", 220, 210)
+    im.Scale("image/pig.png", 220, 210)
     xalign .5
     yalign .5
 
