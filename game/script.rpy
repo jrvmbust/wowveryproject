@@ -3,7 +3,7 @@
                                         ###################    Coded by Rovic Vargas IV - James=    ###############
                                         ###########################################################################
 
-                                                        #version 1 (dont also forget to change ver number)
+                                                        #version 2 (dont also forget to change ver number)
                                                         #running the RenPy engine, you might need to install
                                                         #python to edit this codez
                                                         #edited using Editra
@@ -19,12 +19,6 @@
 #            You may have different ways to approach things but if it is justified then it’s fine. I don’t know okay. I just pulled that out from my ass.
 #                                    P.S. don’t forget scene where Pygmalion comments on some of the most popular waifus around:
 #                
-#                                                                  Yuuki Asuna – too generic
-#                                                               Charlotte Dunois – too “boyish”
-#                                                                  Misaka Mikoto – too mean
-#                                    Kosaki Onodera – She will probably give me an unmeaningful ending (looking at you Nisekoi)
-#                                                                  Aragaki Ayase – Too clingy
-#                                                                  Nico Yazawa – uhhhhhhhhhhh
 
 init:
     $ slow_dissolve = Dissolve(2.0)
@@ -36,6 +30,16 @@ init:
     $ circlewipe = ImageDissolve("id_circlewipe.png", 1.0, 8)
     $ dream = ImageDissolve("id_dream.png", 2.0, 64)
     $ teleport = ImageDissolve("id_teleport.png", 1.0, 0)
+    
+    $ end = Character(None,
+                          what_size=20, #Font size
+                          what_xalign=0.5, #Centers text within the window
+                          window_xalign=0.5, #Centers the window horizontally
+                          window_yalign=0.5, #Centers the window vertically
+                          what_text_align=0.5, #Centers text within the window, just in case
+                          window_background=None,#Removes the window, so only the text shows
+                          what_slow_cps=50 #Speed at which the text appears (slow)
+                          )
 
     
 image bg sc1 = im.Scale("images/sc1.png", 800, 600)
@@ -49,16 +53,21 @@ image bg sc8 = im.Scale("images/sc8.png", 800, 600)
 image bg bbg = im.Scale("images/bbg.png", 800, 600)
 image bg sctrans = im.Scale("images/sctrans.png", 800, 600)
 image gala norm = im.Scale("images/gd.png", 400, 600)
+image gala ivor = im.Scale("images/gdi.png", 400, 600)
 image pig pig:
     im.Scale("images/pig.png", 220, 210)
     xalign .5
     yalign .5
+image doge doge = "images/doge.jpeg"
 
 
 
 
 
 # characters.
+define pyg = Character(_("Pygmalion"),
+                        color="#c8ffc8",
+                        what_slow_cps=50)
 define pyg = Character(_("Pygmalion"),
                         color="#c8ffc8",
                         what_slow_cps=50)
@@ -74,16 +83,6 @@ define aph = Character(_("Aphrodite"),
 define gal = Character(_("Galatea"),
                          color="#c8ffc8",
                          what_slow_cps=50)
-define pygpray = Character(None,
-                          what_size=20, 
-                          what_xalign=0.5, 
-                          window_xalign=0.5, 
-                          window_yalign=0.5, 
-                          what_text_align=0.5, 
-                          window_background=None,
-                          what_slow_cps=50 
-                          )
-
 
 # main script.
 label start:
@@ -102,8 +101,10 @@ label start:
     scene bg sc2
     with dissolve
     
+    #show adv norm
     adv "My Lord, the ladies have been waiting for you."
     pyg "Forgive me, but I don’t want to attend to them."
+    #show adv dismay
     adv "*sigh* {w} Here we go again. I’ve told you countless of times, a man must settle down with someone, if otherwise that man is more than a coward-afraid of his destiny."
     pyg "Tsk… *facepalm*"
     #pyg transform to left with alpha key
@@ -114,6 +115,8 @@ label start:
     scene bg sc3
     with dissolve
     
+    show gala ivor
+    with dissolve
     pyg "Oh my dear Galatea! Forgive me for wasting time with such fools! It is equivalent to death! Alas! Who will admire your perfection and bathe you with riches?"
     
     with dissolve
@@ -122,12 +125,13 @@ label start:
     scene bg sc4
     with dissolve
     
-    #OVID ONLY
+    #show ovid norm
+    #with dissolve
     ovi "My Lord, the coming festival for Aphrodite is fast approaching, what must we do?"
+    #with dissolve
     pyg "Aphrodite, that’s right! The Goddess of Love! If I make her festival worthy for her, she might make Galatea worthy of love for me!"
     pyg "To wish a goddess to do such a humiliating thing… breathing life to a statue of all things… how embarrassing."
     pyg "I digress, as they say: “Do all you can for the one you love.”"
-    #OVID SHOW UP side by side with pyg
     pyg "Let’s make the offering the best we’ve ever gave, Ovid."
     
     with dissolve
@@ -136,7 +140,7 @@ label start:
     scene bg sc5
     with dissolve
     
-    show pig pig 
+    show pig pig
     with dissolve
     play fire "fire.wav" fadein 2 fadeout 2
     pyg "{i}Oh, I bellow how I can place{/i}"
@@ -151,7 +155,11 @@ label start:
     scene bg sc6
     with dissolve
     
+    #show gala norm
+    #with dissolve
     aph "Pygmalion, your prayer has been heard. How pathetic to lone for a flawless craft of the same being you truly despise, a woman."
+    #show gala dismay
+    #with dissolve
     aph "I pity you, dear Pygmalion, *sigh*{w} and for that, I shall grant your righteous desperation. Good thing too, I would probably get a good laugh while I’m at it."
     play fire "chime.wav" fadein 2 fadeout 2
     stop fire
@@ -171,13 +179,71 @@ label start:
     pyg "I’m such a fool, really- {w}moping around and suffering the pain of loving something that can never love me back…"
     pyg "It’s such a pain to keep in the desire to correct the wrongdoings of others. It’s evident that no one can change for the better by himself…"
     pyg "Alas, I cannot let myself go, not now. Quite righteous, yet desperate…"
+    show gala norm
+    with dissolve
     gal "D-Desperate for what…?"
     pyg "Y-You can talk! You’re…alive!"
+    gal "*laughs and hugs Pygmalion again*"
+    pyg "I-I’m speechless…"
+    #show gala smile
+    #with dissolve
+    gal "Then you do not have to talk…"
     
+    with dissolve
+    scene bg bbg
+    with dissolve
+    scene bg sc8
+    with dissolve
     
+    #show aph norm
+    #with dissolve
+    pyg "Thankful am I of the aid, {w}Humbly you have my life changed"
+    aph "The pleasure is all mine."
+    pyg "How can I ever thank you?"
+    aph "Nothing that I require… just let the proper merit go in its place."
+    pyg "I shall bathe you then with riches and more offerings."
+    aph "Whatever you wish to do, just please… no more boars…"
     
-    return
+    with dissolve
+    scene bg bbg
+    with dissolve
     
+    centered "And thus, Galatea and I wed, always thanked Aphrodite, and in return, she never failed to bless our lives."
+    centered "Who would’ve thought that I would marry the very thing that I despised. I guess in the end, the gods have the final say."
+    centered "Not long after, we had another blessing, our son, Paphos."
+    with dissolve
+    centered "To Te’los"
+    with dissolve
+    
+    centered "Thanks for Playing!"
+    
+    with dissolve
+    
+    menu:
+        "What do you want to do?"
+        
+        "Restart the Game.":
+            jump start
+        "End the Game.":
+            return
+        " ":
+            jump easteregg
+
+label easteregg:
+    
+    scene bg bbg
+    show doge doge
+    play music "wow.mp3"
+    
+    end "GROUPMATES:
+              Rovic Vargas{w}
+              Clyde Tapales{w}
+              Justin Caracta{w}
+              Angelika Bais{w}
+              Earl Regalado{w}"
+    stop music
+    
+
     
     
     
