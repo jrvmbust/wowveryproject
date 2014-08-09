@@ -1,42 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 238, in script
-    
-IOError: Couldn't find file 'wow.mp3'.
+While executing init code:
+  File "game/script.rpy", line 62, in script
+    image doge doge = anim.Blink(Image(im.Scale("images/doge.jpeg"), 250, 250))
+  File "game/script.rpy", line 62, in <module>
+    image doge doge = anim.Blink(Image(im.Scale("images/doge.jpeg"), 250, 250))
+TypeError: __init__() takes at least 4 arguments (2 given)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 238, in script
-    
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\ast.py", line 558, in execute
-    renpy.exports.say(who, what, interact=self.interact)
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\exports.py", line 925, in say
-    who(what, interact=interact)
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\character.py", line 817, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\character.py", line 683, in do_display
-    **display_args)
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\character.py", line 486, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\ui.py", line 264, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\display\core.py", line 2065, in interact
-    repeat, rv = self.interact_core(preloads=preloads, **kwargs)
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\display\core.py", line 2340, in interact_core
-    renpy.audio.audio.interact()
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\audio\audio.py", line 913, in interact
-    periodic()
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\audio\audio.py", line 847, in periodic
-    c.periodic()
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\audio\audio.py", line 349, in periodic
-    topf = load(self.file_prefix + topq.filename + self.file_suffix)
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\audio\audio.py", line 83, in load
-    rv = renpy.loader.load(fn)
-  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\loader.py", line 431, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'wow.mp3'.
+  File "game/script.rpy", line 62, in script
+    image doge doge = anim.Blink(Image(im.Scale("images/doge.jpeg"), 250, 250))
+  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\ast.py", line 846, in execute
+    img = renpy.python.py_eval_bytecode(self.code.bytecode)
+  File "C:\Users\Rovic\Desktop\@ renpy-6.17.7-sdk\renpy\python.py", line 1406, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 62, in <module>
+    image doge doge = anim.Blink(Image(im.Scale("images/doge.jpeg"), 250, 250))
+TypeError: __init__() takes at least 4 arguments (2 given)
 
 Windows-7-6.1.7600
 Ren'Py 6.17.7.521

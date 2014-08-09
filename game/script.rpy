@@ -58,8 +58,11 @@ image pig pig:
     im.Scale("images/pig.png", 220, 210)
     xalign .5
     yalign .5
-image doge doge = im.Alpha("images/doge.jpeg", 0.5)
-
+    
+image doge doge:
+     anim.Blink(Image("images/doge.jpeg"))
+     xalign .5
+     yalign .5
 
 
 
@@ -83,6 +86,7 @@ define aph = Character(_("Aphrodite"),
 define gal = Character(_("Galatea"),
                          color="#c8ffc8",
                          what_slow_cps=50)
+define wow = Character(None, what_outlines=[(3, "#000000", 2, 2), (3, "#282", 0, 0)], what_size = 40, what_style="centered_text", window_style="centered_window")
 
 # main script.
 label start:
@@ -226,7 +230,7 @@ label start:
             jump start
         "End the Game.":
             return
-        " ":
+        "pls dont click":
             jump easteregg
 
 label easteregg:
@@ -234,26 +238,90 @@ label easteregg:
     scene bg bbg
     show doge doge
     with dissolve
-    play music "wow.mp3"
+    play music "wow.mp3" fadein 2
     
-    end "GROUPMATES:"
-    end "     Rovic Vargas{w}
-              Clyde Tapales{w}
-              Justin Caracta{w}
-              Angelika Bais{w}
-              Earl Regalado{w}"
-    
-    
-    
-    centered "Thanks for Playing!"
     with dissolve
-    stop music
-    return
+    wow "This was Greek Retold: Pygmalion and Aphrodite"
+    with dissolve
+    wow "GROUPMATES:"
+    with dissolve
+    wow "Rovic Vargas"
+    with dissolve
+    wow "Clyde Tapales"
+    with dissolve
+    wow "Justin Carcacta" #huehuehuehuehue
+    with dissolve
+    wow "Angelika Bais"
+    with dissolve
+    wow "Earl Regalado"
+    with dissolve
+    wow "Thanks for Playing!"
     
+    stop music fadeout 1
+    jump menu1
     
+label menu1:
     
+    menu:
+        "What do you want to do?"
+        
+        "Restart the Game.":
+            jump start
+        "End the Game.":
+            return
+        "u just clicked it, dont click this again":
+            jump easteregg1
+            
+label easteregg1:
     
+    scene bg bbg
+    show doge doge
+    with dissolve
+    play music "wow2.mp3" fadein 2
     
+    with dissolve
+    wow "This was Greek Retold: Pygmalion and Aphrodite"
+    with dissolve
+    wow "GROUPMATES:"
+    with dissolve
+    wow "Rovic Vargas"
+    with dissolve
+    wow "Clyde Tapales"
+    with dissolve
+    wow "Justiniano Caracta" #huehuehuehuehue2xmorehuehue
+    with dissolve
+    wow "Angelika Bais"
+    with dissolve
+    wow "Earl Regalado"
+    with dissolve
+    wow "Thanks for Playing!"
+    
+    stop music fadeout 1
+    jump menu2
+    
+label menu2:
+    
+    menu:
+        "What do you want to do?"
+        
+        "Restart the Game.":
+            jump start
+        "End the Game.":
+            return
+        "u cant click dis anymore":
+            jump menu3
+
+label menu3:
+    
+    menu:
+        "What do you want to do?"
+        
+        "Restart the Game.":
+            jump start
+        "End the Game.":
+            return
+        "pls dont":
+            jump menu2
     
     
     
