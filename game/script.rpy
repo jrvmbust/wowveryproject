@@ -1,5 +1,5 @@
 ﻿                                        ###########################################################################
-                                        #######      Project Sweg- DONT FORGET TO FUCKING ADD CHARACTERS     ######
+                                        #######          Project Sweg- DONT FORGET TO ADD CHARACTERS         ######
                                         ###################    Coded by Rovic Vargas IV - James=    ###############
                                         ###########################################################################
 
@@ -54,6 +54,11 @@ image bg bbg = im.Scale("images/bbg.png", 800, 600)
 image bg sctrans = im.Scale("images/sctrans.png", 800, 600)
 image gala norm = im.Scale("images/gd.png", 400, 600)
 image gala ivor = im.Scale("images/gdi.png", 400, 600)
+image aph norm = im.Scale("images/aphnorm.png", 400, 600)
+image aph dismay = im.Scale("images/aphsad.png", 400, 600)
+image adv norm = im.Scale("images/adv.png", 400, 500)
+image adv dismay = im.Scale("images/advdis.png", 400, 500)
+image ovid norm = im.Scale("images/ovi.png", 400, 500)
 image pig pig:
     im.Scale("images/pig.png", 220, 210)
     xalign .5
@@ -105,10 +110,10 @@ label start:
     scene bg sc2
     with dissolve
     
-    #show adv norm
+    show adv norm
     adv "My Lord, the ladies have been waiting for you."
     pyg "Forgive me, but I don’t want to attend to them."
-    #show adv dismay
+    show adv dismay
     adv "*sigh* {w} Here we go again. I’ve told you countless of times, a man must settle down with someone, if otherwise that man is more than a coward-afraid of his destiny."
     pyg "Tsk… *facepalm*"
     #pyg transform to left with alpha key
@@ -129,10 +134,10 @@ label start:
     scene bg sc4
     with dissolve
     
-    #show ovid norm
-    #with dissolve
+    show ovid norm
+    with dissolve
     ovi "My Lord, the coming festival for Aphrodite is fast approaching, what must we do?"
-    #with dissolve
+    with dissolve
     pyg "Aphrodite, that’s right! The Goddess of Love! If I make her festival worthy for her, she might make Galatea worthy of love for me!"
     pyg "To wish a goddess to do such a humiliating thing… breathing life to a statue of all things… how embarrassing."
     pyg "I digress, as they say: “Do all you can for the one you love.”"
@@ -159,11 +164,11 @@ label start:
     scene bg sc6
     with dissolve
     
-    #show gala norm
-    #with dissolve
+    show aph norm
+    with dissolve
     aph "Pygmalion, your prayer has been heard. How pathetic to lone for a flawless craft of the same being you truly despise, a woman."
-    #show gala dismay
-    #with dissolve
+    show aph dismay
+    with dissolve
     aph "I pity you, dear Pygmalion, *sigh*{w} and for that, I shall grant your righteous desperation. Good thing too, I would probably get a good laugh while I’m at it."
     play fire "chime.wav" fadein 2 fadeout 2
     stop fire
@@ -189,8 +194,8 @@ label start:
     pyg "Y-You can talk! You’re…alive!"
     gal "*laughs and hugs Pygmalion again*"
     pyg "I-I’m speechless…"
-    #show gala smile
-    #with dissolve
+    show gala smile
+    with dissolve
     gal "Then you do not have to talk…"
     
     with dissolve
@@ -199,8 +204,8 @@ label start:
     scene bg sc8
     with dissolve
     
-    #show aph norm
-    #with dissolve
+    show aph norm
+    with dissolve
     pyg "Thankful am I of the aid, {w}Humbly you have my life changed"
     aph "The pleasure is all mine."
     pyg "How can I ever thank you?"
